@@ -1,3 +1,23 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## Notice
+This package, `flutter_receive_sharing`, is a fork of the original `receive_sharing_intent` package being maintained for a production app. For more details, please refer to the original repository: [receive_sharing_intent](https://github.com/KasemJaffer/receive_sharing_intent).
+
+---
+
+## 1.0.0 - 2025-12-23
+
+🎉 **Initial Release**
+
+Initial release of the forked package `flutter_receive_sharing` (previously `receive_sharing_intent`).
+
+* Fixed iOS screenshot sharing by adding support for Data type images (screenshots arrive as NSData instead of file URLs)
+* Added user-friendly toast error messages when image processing fails
+* Improved error handling for unsupported media formats
+
 ## 1.8.1
 
 * Fixed sharing not working on iOS 18

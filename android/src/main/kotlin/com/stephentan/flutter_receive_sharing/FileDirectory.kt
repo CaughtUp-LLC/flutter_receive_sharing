@@ -1,4 +1,4 @@
-package com.kasem.receive_sharing_intent
+package com.stephentan.flutter_receive_sharing
 
 import android.content.ContentUris
 import android.content.Context

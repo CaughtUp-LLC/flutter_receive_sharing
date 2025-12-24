@@ -8,8 +8,8 @@ public let kUserDefaultsMessageKey = "ShareMessageKey"
 public let kAppGroupIdKey = "AppGroupId"
 
 public class SwiftReceiveSharingIntentPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
-    static let kMessagesChannel = "receive_sharing_intent/messages"
-    static let kEventsChannelMedia = "receive_sharing_intent/events-media"
+    static let kMessagesChannel = "flutter_receive_sharing/messages"
+    static let kEventsChannelMedia = "flutter_receive_sharing/events-media"
     
     private var initialMedia: [SharedMediaFile]?
     private var latestMedia: [SharedMediaFile]?

@@ -1,6 +1,6 @@
-# receive_sharing_intent_example
+# flutter_receive_sharing_example
 
-Demonstrates how to use the receive_sharing_intent plugin.
+Demonstrates how to use the flutter_receive_sharing plugin.
 
 ![Alt Text](./demo.gif)
 

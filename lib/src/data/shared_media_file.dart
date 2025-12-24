@@ -1,4 +1,4 @@
-part of receive_sharing_intent;
+part of flutter_receive_sharing;
 
 class SharedMediaFile {
   /// Shared file path, url or the text

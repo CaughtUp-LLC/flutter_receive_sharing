@@ -7,9 +7,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:receive_sharing_intent/receive_sharing_intent.dart';
+import 'package:flutter_receive_sharing/flutter_receive_sharing.dart';
 
-import 'package:receive_sharing_intent_example/main.dart';
+import 'package:flutter_receive_sharing_example/main.dart';
 
 void main() {
   testWidgets('Verify Platform version', (WidgetTester tester) async {

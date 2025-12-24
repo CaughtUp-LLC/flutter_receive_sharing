@@ -4,15 +4,15 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import '../receive_sharing_intent.dart';
+import '../flutter_receive_sharing.dart';
 
 class ReceiveSharingIntentMobile extends ReceiveSharingIntent {
   @visibleForTesting
-  final mChannel = const MethodChannel('receive_sharing_intent/messages');
+  final mChannel = const MethodChannel('flutter_receive_sharing/messages');
 
   @visibleForTesting
   final eChannelMedia =
-      const EventChannel("receive_sharing_intent/events-media");
+      const EventChannel("flutter_receive_sharing/events-media");
 
   static Stream<List<SharedMediaFile>>? _streamMedia;
 

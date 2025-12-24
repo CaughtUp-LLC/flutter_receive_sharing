@@ -1,6 +1,6 @@
 import UIKit
 import Flutter
-import receive_sharing_intent
+import flutter_receive_sharing
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
