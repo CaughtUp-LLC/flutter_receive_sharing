@@ -68,17 +68,33 @@ open class RSIShareViewController: SLComposeServiceViewController {
                                                          content: content)
                                     }
                                 default:
+                                    // Handle different data types: URL (Photos app), Data (screenshots), UIImage (fallback)
                                     if let url = data as? URL {
                                         this.handleMedia(forFile: url,
                                                          type: type,
                                                          index: index,
                                                          content: content)
                                     }
+                                    else if let imageData = data as? Data {
+                                        // Screenshots arrive as Data, convert to UIImage
+                                        if let image = UIImage(data: imageData) {
+                                            this.handleMedia(forUIImage: image,
+                                                             type: type,
+                                                             index: index,
+                                                             content: content)
+                                        } else {
+                                            this.showToast(message: "Unable to process image data")
+                                            this.dismissWithError()
+                                        }
+                                    }
                                     else if let image = data as? UIImage {
                                         this.handleMedia(forUIImage: image,
                                                          type: type,
                                                          index: index,
                                                          content: content)
+                                    } else {
+                                        this.showToast(message: "Unsupported media format")
+                                        this.dismissWithError()
                                     }
                                 }
                             }
@@ -228,6 +244,16 @@ open class RSIShareViewController: SLComposeServiceViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
         extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+    }
+    
+    private func showToast(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        present(alert, animated: true)
+        
+        // Auto dismiss after 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            alert.dismiss(animated: true)
+        }
     }
     
     private func getFileName(from url: URL, type: SharedMediaType) -> String {
